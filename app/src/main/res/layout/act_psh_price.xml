@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".activity.PSh_Price"
+    android:orientation="vertical"
+    android:background="@color/colorGray200">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:text="قیمت ( به لیر )"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/yekanmedium"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="7dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/psh_price_layout0"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:color/white"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="7dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/yekanregular"
+                        android:text="واحد بدون خواب :"
+                        android:gravity="center|right"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@+id/lineimage1"
+                        android:textColor="@color/colorGray500"
+                        android:textSize="12sp"/>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/lineimage1"
+                        android:src="@drawable/num0"
+                        android:padding="9dp"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center|right">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/psh_price_min0"
+                            android:fontFamily="@font/yekanregular"
+                            android:layout_marginRight="5dp"
+                            android:textSize="17sp"
+                            android:gravity="center"
+                            android:lineSpacingExtra="7dp"
+                            android:textColor="@color/colorGray800"/>
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/arrow"
+                            android:padding="9dp"
+                            android:rotation="-180"
+                            android:tint="#ef5350"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center|right">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/psh_price_max0"
+                            android:fontFamily="@font/yekanregular"
+                            android:layout_marginRight="5dp"
+                            android:textSize="17sp"
+                            android:gravity="center"
+                            android:lineSpacingExtra="7dp"
+                            android:textColor="@color/colorGray800"/>
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/arrow"
+                            android:padding="9dp"
+                            android:tint="#66BB6A"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/psh_price_layout1"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:color/white"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="7dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/yekanregular"
+                        android:text="واحد یک خوابه :"
+                        android:gravity="center|right"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@+id/lineimage2"
+                        android:textColor="@color/colorGray500"
+                        android:textSize="12sp"/>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/lineimage2"
+                        android:src="@drawable/num1"
+                        android:padding="9dp"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center|right">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/psh_price_min1"
+                            android:fontFamily="@font/yekanregular"
+                            android:layout_marginRight="5dp"
+                            android:textSize="17sp"
+                            android:gravity="center"
+                            android:lineSpacingExtra="7dp"
+                            android:textColor="@color/colorGray800"/>
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/arrow"
+                            android:padding="9dp"
+                            android:rotation="-180"
+                            android:tint="#ef5350"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center|right">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/psh_price_max1"
+                            android:fontFamily="@font/yekanregular"
+                            android:layout_marginRight="5dp"
+                            android:textSize="17sp"
+                            android:gravity="center"
+                            android:lineSpacingExtra="7dp"
+                            android:textColor="@color/colorGray800"/>
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/arrow"
+                            android:padding="9dp"
+                            android:tint="#66BB6A"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/psh_price_layout2"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:color/white"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="7dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/yekanregular"
+                        android:text="واحد دو خوابه :"
+                        android:gravity="center|right"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@+id/lineimage3"
+                        android:textColor="@color/colorGray500"
+                        android:textSize="12sp"/>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/lineimage3"
+                        android:src="@drawable/num2"
+                        android:padding="9dp"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center|right">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/psh_price_min2"
+                            android:fontFamily="@font/yekanregular"
+                            android:layout_marginRight="5dp"
+                            android:textSize="17sp"
+                            android:gravity="center"
+                            android:lineSpacingExtra="7dp"
+                            android:textColor="@color/colorGray800"/>
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/arrow"
+                            android:padding="9dp"
+                            android:rotation="-180"
+                            android:tint="#ef5350"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center|right">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/psh_price_max2"
+                            android:fontFamily="@font/yekanregular"
+                            android:layout_marginRight="5dp"
+                            android:textSize="17sp"
+                            android:gravity="center"
+                            android:lineSpacingExtra="7dp"
+                            android:textColor="@color/colorGray800"/>
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/arrow"
+                            android:padding="9dp"
+                            android:tint="#66BB6A"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/psh_price_layout3"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:color/white"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="7dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/yekanregular"
+                        android:text="واحد سه خوابه :"
+                        android:gravity="center|right"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@+id/lineimage4"
+                        android:textColor="@color/colorGray500"
+                        android:textSize="12sp"/>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/lineimage4"
+                        android:src="@drawable/num3"
+                        android:padding="9dp"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center|right">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/psh_price_min3"
+                            android:fontFamily="@font/yekanregular"
+                            android:layout_marginRight="5dp"
+                            android:textSize="17sp"
+                            android:gravity="center"
+                            android:lineSpacingExtra="7dp"
+                            android:textColor="@color/colorGray800"/>
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/arrow"
+                            android:padding="9dp"
+                            android:rotation="-180"
+                            android:tint="#ef5350"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center|right">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/psh_price_max3"
+                            android:fontFamily="@font/yekanregular"
+                            android:layout_marginRight="5dp"
+                            android:textSize="17sp"
+                            android:gravity="center"
+                            android:lineSpacingExtra="7dp"
+                            android:textColor="@color/colorGray800"/>
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/arrow"
+                            android:padding="9dp"
+                            android:tint="#66BB6A"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/psh_price_layout4"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:color/white"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="7dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/yekanregular"
+                        android:text="واحد چهار خوابه :"
+                        android:gravity="center|right"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@+id/lineimage5"
+                        android:textColor="@color/colorGray500"
+                        android:textSize="12sp"/>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/lineimage5"
+                        android:src="@drawable/num4"
+                        android:padding="9dp"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center|right">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/psh_price_min4"
+                            android:fontFamily="@font/yekanregular"
+                            android:layout_marginRight="5dp"
+                            android:textSize="17sp"
+                            android:gravity="center"
+                            android:lineSpacingExtra="7dp"
+                            android:textColor="@color/colorGray800"/>
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/arrow"
+                            android:padding="9dp"
+                            android:rotation="-180"
+                            android:tint="#ef5350"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center|right">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/psh_price_max4"
+                            android:fontFamily="@font/yekanregular"
+                            android:layout_marginRight="5dp"
+                            android:textSize="17sp"
+                            android:gravity="center"
+                            android:lineSpacingExtra="7dp"
+                            android:textColor="@color/colorGray800"/>
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/arrow"
+                            android:padding="9dp"
+                            android:tint="#66BB6A"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/psh_price_layout5"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:color/white"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="7dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/yekanregular"
+                        android:text="واحد پنج خوابه :"
+                        android:gravity="center|right"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@+id/lineimage6"
+                        android:textColor="@color/colorGray500"
+                        android:textSize="12sp"/>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/lineimage6"
+                        android:src="@drawable/num5"
+                        android:padding="9dp"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center|right">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/psh_price_min5"
+                            android:fontFamily="@font/yekanregular"
+                            android:layout_marginRight="5dp"
+                            android:textSize="17sp"
+                            android:gravity="center"
+                            android:lineSpacingExtra="7dp"
+                            android:textColor="@color/colorGray800"/>
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/arrow"
+                            android:padding="9dp"
+                            android:rotation="-180"
+                            android:tint="#ef5350"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center|right">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/psh_price_max5"
+                            android:fontFamily="@font/yekanregular"
+                            android:layout_marginRight="5dp"
+                            android:textSize="17sp"
+                            android:gravity="center"
+                            android:lineSpacingExtra="7dp"
+                            android:textColor="@color/colorGray800"/>
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/arrow"
+                            android:padding="9dp"
+                            android:tint="#66BB6A"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

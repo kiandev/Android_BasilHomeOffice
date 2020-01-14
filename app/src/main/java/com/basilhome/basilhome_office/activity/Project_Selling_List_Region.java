@@ -1,0 +1,141 @@
+package com.basilhome.basilhome_office.activity;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.basilhome.basilhome_office.R;
+import com.basilhome.basilhome_office.classes.HttpUrl;
+import com.basilhome.basilhome_office.classes.InternetTest;
+import com.basilhome.basilhome_office.classes.Region;
+import com.basilhome.basilhome_office.classes.Region_Adapter;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+public class Project_Selling_List_Region extends AppCompatActivity {
+
+    public static final String TAG = MainActivity.TAG;
+    RecyclerView recyclerView;
+    LinearLayout nodata;
+    SearchView searchView;
+    ArrayList<Region> os_version = new ArrayList<>();
+    Region_Adapter mAdapter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.act_project_selling_list_region);
+
+        searchView = findViewById(R.id.project_selling_list_region_searchview);
+        recyclerView = findViewById(R.id.project_selling_list_region_rv);
+        nodata = findViewById(R.id.project_selling_list_region_nodata );
+        recyclerView.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(),2);
+        recyclerView.setLayoutManager(layoutManager);
+
+        mAdapter = new Region_Adapter(os_version);
+
+        if (!InternetTest.ok(getApplicationContext())) {
+            Toast.makeText(this, "لطفا ابتدا دستگاه خود را به اینترنت متصل نمایید", Toast.LENGTH_SHORT).show();
+            finish();
+        } else {
+            loadRegion();
+        }
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                final ArrayList<Region> filteredModelList = filter(os_version, query);
+                mAdapter.setFilter(filteredModelList);
+                searchView.clearFocus();
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                final ArrayList<Region> filteredModelList = filter(os_version, newText);
+                mAdapter.setFilter(filteredModelList);
+                return true;
+            }
+
+        });
+    }
+    private ArrayList<Region> filter(ArrayList<Region> models, String search_txt) {
+
+        search_txt = search_txt.toLowerCase();
+        final ArrayList<Region> filteredModelList = new ArrayList<>();
+
+        for (Region model : models) {
+
+            final String text = model.getName().toLowerCase();
+            if (text.contains(search_txt)) {
+                filteredModelList.add(model);
+            }
+        }
+        return filteredModelList;
+    }
+
+    private void loadRegion() {
+        String URL = HttpUrl.geturl + "project_selling_list_region.php";
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray array = new JSONArray(response);
+                            for (int i = 0; i < array.length(); i++) {
+                                JSONObject region = array.getJSONObject(i);
+                                os_version.add(new Region(
+                                        region.getInt("id"),
+                                        region.getString("name")
+                                ));
+                            }
+                            recyclerView.setAdapter(mAdapter);
+                            if (mAdapter.getItemCount() == 0) {
+                                recyclerView.setVisibility(View.GONE);
+                                nodata.setVisibility(View.VISIBLE);
+                            } else {
+                                recyclerView.setVisibility(View.VISIBLE);
+                                nodata.setVisibility(View.GONE);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(Project_Selling_List_Region.this, "متاسفانه خطایی نامشخصی رخ داده است ، لطفا بعدا مجددا تلاش نمایید", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                });
+        Volley.newRequestQueue(this).add(stringRequest);
+
+    }
+
+    public void project_selling_list_region_back_click(View v) {
+        finish();
+    }
+
+    public void project_selling_list_region_cv_click (View v) {
+        searchView.setIconified(false);
+    }
+}

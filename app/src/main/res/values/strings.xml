@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">بازیل هوم - اداری</string>
+    <string name="default_notification_channel_id">کانال عمومی</string>
+</resources>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.User_Settings"
+    android:background="@color/colorGray200">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/user_settings_back"
+            android:fontFamily="@font/yekanmedium"
+            android:gravity="right|center"
+            android:text="تنظیمات"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/user_settings_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:clickable="true"
+            android:onClick="user_settings_back_click"
+            android:padding="12dp"
+            android:src="@drawable/back" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="7dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="user_settings_changepass_click"
+                        android:background="@android:color/white"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:layout_toLeftOf="@+id/lineimage1"
+                            android:fontFamily="@font/yekanregular"
+                            android:gravity="center|right"
+                            android:layout_centerVertical="true"
+                            android:text="تغییر کلمه عبور"
+                            android:textColor="@color/colorGray800"
+                            android:textSize="13sp" />
+
+                        <ImageView
+                            android:id="@+id/lineimage1"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentRight="true"
+                            android:padding="11dp"
+                            android:src="@drawable/changepass_icon"/>
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorGray200"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_toLeftOf="@+id/user_settings_switch"
+                            android:orientation="horizontal"
+                            android:gravity="right|center"
+                            android:layout_centerVertical="true">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="5dp"
+                                android:layout_gravity="center"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/yekanregular"
+                                android:gravity="center"
+                                android:id="@+id/user_settings_txtfingerprint"
+                                android:text="غیر فعال است"
+                                android:textColor="@color/colorGray600"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="5dp"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/yekanregular"
+                                android:gravity="center"
+                                android:text="ورود با اثر انگشت :"
+                                android:textColor="@color/colorGray800"
+                                android:textSize="13sp" />
+
+
+                        </LinearLayout>
+
+                        <android.support.v7.widget.SwitchCompat
+                            android:layout_width="45dp"
+                            android:layout_height="50dp"
+                            android:layout_marginRight="5dp"
+                            android:id="@+id/user_settings_switch"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_alignParentRight="true"/>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

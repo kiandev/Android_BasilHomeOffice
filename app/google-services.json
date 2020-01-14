@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "769095027277",
+    "firebase_url": "https://basilhome-office.firebaseio.com",
+    "project_id": "basilhome-office",
+    "storage_bucket": "basilhome-office.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769095027277:android:48b750c1a44e7858",
+        "android_client_info": {
+          "package_name": "com.basilhome.basilhome_office"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769095027277-48sd2869u64gj3s6ujma7lmemmqc8s78.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALft4J-HK-_SWO0g-lSYKq1kVYpb6G4g8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "769095027277-48sd2869u64gj3s6ujma7lmemmqc8s78.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

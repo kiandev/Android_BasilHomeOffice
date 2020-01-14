@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.basilhome.basilhome_office">
+
+    <uses-feature
+        android:name="android.hardware.fingerprint"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/basilhome_logo" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
+        <service android:name=".classes.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".activity.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.Panel_Admin"/>
+        <activity android:name=".activity.Notification_List"/>
+        <activity android:name=".activity.Admin_Message_Plus"/>
+        <activity android:name=".activity.Admin_Notification_Plus"/>
+        <activity android:name=".activity.Change_User_Password" />
+        <activity android:name=".activity.User_Settings" />
+        <activity android:name=".activity.Advisor_Report_Admin" />
+        <activity android:name=".activity.Project_Show_Info" />
+        <activity android:name=".activity.Customer_Show_Info" />
+        <activity android:name=".activity.Customer_Edit" />
+        <activity android:name=".activity.Customer_Change_Advisor" />
+        <activity android:name=".activity.Project_Selling_List_Region" />
+        <activity android:name=".activity.Customer_User_List" />
+        <activity android:name=".activity.Customer_IT_List" />
+        <activity android:name=".activity.Customer_Note_List" />
+        <activity android:name=".activity.Customer_User_Selector" />
+        <activity android:name=".activity.Customer_IT_Selector" />
+        <activity android:name=".activity.Report_Admin_List" />
+        <activity android:name=".activity.Project_Note_List" />
+        <activity android:name=".activity.Advisor_Note_Customer_Plus" />
+        <activity android:name=".activity.Advisor_Note_Project_Plus" />
+        <activity android:name=".activity.Advisor_Customer_Edit" />
+        <activity android:name=".activity.Project_Selling_List_AZ" />
+        <activity android:name=".activity.Customer_Plus" />
+        <activity android:name=".activity.IT_Settings" />
+        <activity android:name=".activity.Admin_Settings" />
+        <activity android:name=".activity.Project_Selling_Selector" />
+        <activity android:name=".activity.Panel_IT" />
+        <activity android:name=".activity.About_Basil" />
+        <activity
+            android:name=".activity.PSh_Base"
+            android:theme="@style/customDialogTheme" />
+        <activity
+            android:name=".activity.PSh_Advanced"
+            android:theme="@style/customDialogTheme" />
+        <activity
+            android:name=".activity.PSh_Contact"
+            android:theme="@style/customDialogTheme" />
+        <activity
+            android:name=".activity.PSh_Facilities"
+            android:theme="@style/customDialogTheme" />
+        <activity
+            android:name=".activity.PSh_Distance"
+            android:theme="@style/customDialogTheme" />
+        <activity
+            android:name=".activity.PSh_Price"
+            android:theme="@style/customDialogTheme" />
+        <activity
+            android:name=".activity.PSh_Sale"
+            android:theme="@style/customDialogTheme" />
+        <activity
+            android:name=".activity.Get_Num_Search_Price"
+            android:theme="@style/customDialogTheme" />
+        <activity android:name=".activity.Project_Search_Price" />
+        <activity
+            android:name=".activity.Fingerprint"
+            android:theme="@style/customDialogTheme" />
+        <activity android:name=".activity.Panel_Selling" />
+        <activity android:name=".activity.Login_User" />
+        <activity android:name=".activity.MainActivity" />
+    </application>
+
+</manifest>

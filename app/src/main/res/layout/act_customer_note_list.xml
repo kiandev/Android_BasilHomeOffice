@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray200"
+    android:orientation="vertical"
+    tools:context=".activity.Customer_Note_List">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:id="@+id/line1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/customer_note_list_customername"
+            android:layout_centerVertical="true"
+            android:text="نام مشتری"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:gravity="right|center"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/yekanmedium"
+            android:layout_toLeftOf="@+id/customer_note_list_back"/>
+
+        <ImageView
+            android:id="@+id/customer_note_list_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:padding="12dp"
+            android:src="@drawable/back"
+            android:layout_marginRight="10dp"
+            android:onClick="customer_note_list_back_click"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line1"
+        android:id="@+id/line2">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/customer_note_list_cv"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            shimmer:cardBackgroundColor="@android:color/white"
+            shimmer:cardCornerRadius="5dp"
+            shimmer:cardElevation="2dp"
+            android:onClick="customer_note_list_cv_click">
+
+            <android.support.v7.widget.SearchView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                shimmer:iconifiedByDefault="true"
+                android:id="@+id/customer_note_list_searchview">
+
+            </android.support.v7.widget.SearchView>
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/line2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/customer_note_list_nodata"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginBottom="50dp"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="جهت ثبت یادداشت جدید دکمه + زیر را بفشارید"
+                android:textSize="16sp"
+                android:textColor="@color/colorGray800"
+                android:gravity="center"
+                android:layout_marginTop="20dp"/>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/customer_note_list_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/btnPlus"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/circle_shape"
+        android:src="@drawable/plus_icon"
+        android:layout_alignParentBottom="true"
+        android:tint="@color/colorPrimaryDark"
+        android:elevation="4dp"
+        android:padding="12dp" />
+
+</RelativeLayout>

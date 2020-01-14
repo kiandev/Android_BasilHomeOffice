@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="کارشناسان"
+        android:id="@+id/admin_item_advisor"
+        android:icon="@drawable/profile_icon"/>
+
+    <item
+        android:title="مشتریان"
+        android:id="@+id/admin_item_customer"
+        android:icon="@drawable/customer_icon"/>
+
+    <item
+        android:title="پروژه ها"
+        android:id="@+id/admin_item_project"
+        android:icon="@drawable/project_icon"/>
+
+    <item
+        android:title="صفحه اصلی"
+        android:id="@+id/admin_item_home"
+        android:icon="@drawable/home_icon"/>
+
+</menu>

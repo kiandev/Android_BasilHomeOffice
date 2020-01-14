@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorGray200"
+    android:orientation="vertical"
+    tools:context=".activity.PSh_Distance">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/yekanmedium"
+            android:gravity="center"
+            android:text="دسترسی ها"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="1dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/lineimage1"
+            android:fontFamily="@font/yekanregular"
+            android:gravity="center|right"
+            android:text="فاصله تا مترو :"
+            android:textColor="@color/colorGray500"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/lineimage1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:padding="6dp"
+            android:src="@drawable/metro_icon"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/psh_distance_metro"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/yekanregular"
+            android:gravity="center"
+            android:lineSpacingExtra="7dp"
+            android:textColor="@color/colorGray800"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="1dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/lineimage2"
+            android:fontFamily="@font/yekanregular"
+            android:gravity="center|right"
+            android:text="فاصله تا متروباس :"
+            android:textColor="@color/colorGray500"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/lineimage2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:padding="7dp"
+            android:src="@drawable/bus_icon" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/psh_distance_metrobus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/yekanregular"
+            android:gravity="center"
+            android:lineSpacingExtra="7dp"
+            android:textColor="@color/colorGray800"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="1dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/lineimage3"
+            android:fontFamily="@font/yekanregular"
+            android:gravity="center|right"
+            android:text="فاصله تا فرودگاه :"
+            android:textColor="@color/colorGray500"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/lineimage3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:padding="6dp"
+            android:src="@drawable/plane_icon" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/psh_distance_aerodrome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/yekanregular"
+            android:gravity="center"
+            android:lineSpacingExtra="7dp"
+            android:textColor="@color/colorGray800"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="1dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/lineimage4"
+            android:fontFamily="@font/yekanregular"
+            android:gravity="center|right"
+            android:text="فاصله تا مرکز خرید :"
+            android:textColor="@color/colorGray500"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/lineimage4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            android:src="@drawable/mall_icon" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/psh_distance_mall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/yekanregular"
+            android:gravity="center"
+            android:lineSpacingExtra="7dp"
+            android:textColor="@color/colorGray800"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="1dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/lineimage5"
+            android:fontFamily="@font/yekanregular"
+            android:gravity="center|right"
+            android:text="فاصله تا اتوبان اصلی :"
+            android:textColor="@color/colorGray500"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/lineimage5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:padding="7dp"
+            android:src="@drawable/highway_icon" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="7dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/psh_distance_highway"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/yekanregular"
+            android:gravity="center"
+            android:lineSpacingExtra="7dp"
+            android:textColor="@color/colorGray800"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

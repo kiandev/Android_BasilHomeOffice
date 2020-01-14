@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".activity.PSh_Base"
+    android:orientation="vertical"
+    android:background="@color/colorGray200">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:text="اطلاعات پایه"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/yekanmedium"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@android:color/white"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="7dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/yekanregular"
+            android:text="شرکت سازنده :"
+            android:gravity="center|right"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/lineimage1"
+            android:textColor="@color/colorGray500"
+            android:textSize="13sp"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/lineimage1"
+            android:src="@drawable/company_icon"
+            android:padding="8dp"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/psh_base_company"
+            android:fontFamily="@font/yekanregular"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:lineSpacingExtra="7dp"
+            android:textColor="@color/colorGray800"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@android:color/white"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="7dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/yekanregular"
+            android:text="آدرس :"
+            android:gravity="center|right"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/lineimage2"
+            android:textColor="@color/colorGray500"
+            android:textSize="13sp"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/lineimage2"
+            android:src="@drawable/address_icon"
+            android:padding="10dp"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/psh_base_address"
+            android:fontFamily="@font/yekanregular"
+            android:padding="10dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:lineSpacingExtra="7dp"
+            android:textColor="@color/colorGray800"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@android:color/white"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="7dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/yekanregular"
+            android:text="مسئول فروش :"
+            android:gravity="center|right"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/lineimage3"
+            android:textColor="@color/colorGray500"
+            android:textSize="13sp"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/lineimage3"
+            android:src="@drawable/manager_icon"
+            android:padding="8dp"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="7dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/psh_base_manager"
+            android:fontFamily="@font/yekanregular"
+            android:padding="10dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:lineSpacingExtra="7dp"
+            android:textColor="@color/colorGray800"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

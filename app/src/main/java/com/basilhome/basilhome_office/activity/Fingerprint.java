@@ -1,0 +1,167 @@
+package com.basilhome.basilhome_office.activity;
+
+import android.Manifest;
+import android.app.KeyguardManager;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.hardware.fingerprint.FingerprintManager;
+import android.os.Build;
+import android.security.keystore.KeyGenParameterSpec;
+import android.security.keystore.KeyPermanentlyInvalidatedException;
+import android.security.keystore.KeyProperties;
+import android.support.annotation.RequiresApi;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+import com.basilhome.basilhome_office.R;
+import com.basilhome.basilhome_office.classes.FingerprintHandler;
+import com.basilhome.basilhome_office.classes.custom_dialog;
+
+import java.io.IOException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.UnrecoverableKeyException;
+import java.security.cert.CertificateException;
+
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+
+public class Fingerprint extends AppCompatActivity {
+
+    private static final String KEY_NAME = "yourKey";
+    private Cipher cipher;
+    private KeyStore keyStore;
+    private KeyGenerator keyGenerator;
+    private FingerprintManager.CryptoObject cryptoObject;
+    private FingerprintManager fingerprintManager;
+    private KeyguardManager keyguardManager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.act_fingerprint);
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                keyguardManager =
+                        (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
+                fingerprintManager =
+                        (FingerprintManager) getSystemService(FINGERPRINT_SERVICE);
+                if (!fingerprintManager.isHardwareDetected()) {
+                    custom_dialog dialog = new custom_dialog(getApplicationContext());
+                    dialog.setTitle("عملیات ناموفق !");
+                    dialog.setMessage("متاسفانه دستگاه شما از قابلیت ورود از طریق اثر انگشت پشتیبانی نمی کند");
+                    dialog.show();
+//                textView.setText("Your device doesn't support fingerprint authentication");
+                }
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.USE_FINGERPRINT) != PackageManager.PERMISSION_GRANTED) {
+                    custom_dialog dialog = new custom_dialog(getApplicationContext());
+                    dialog.setTitle("عملیات ناموفق !");
+                    dialog.setMessage("لطفا دسترسی لازم جهت استفاده از قابلیت ورود از طریق اثر انگشت را صادر نمایید");
+                    dialog.show();
+//                textView.setText("Please enable the fingerprint permission");
+                }
+
+                if (!fingerprintManager.hasEnrolledFingerprints()) {
+                    custom_dialog dialog = new custom_dialog(getApplicationContext());
+                    dialog.setTitle("عملیات ناموفق !");
+                    dialog.setMessage("شما هیچ اثر انگشتی جهت احراز هویت در دستگاه تان وارد نکرده اید ، لطفا ابتدا از طریق تنظیمات تلفن همراه خود نسبت به وارد کردن اثر انگشت خود اقدام نمایید");
+                    dialog.show();
+//                textView.setText("No fingerprint configured. Please register at least one fingerprint in your device's Settings");
+                }
+
+                if (!keyguardManager.isKeyguardSecure()) {
+                    custom_dialog dialog = new custom_dialog(getApplicationContext());
+                    dialog.setTitle("عملیات ناموفق !");
+                    dialog.setMessage("شما هیچ اثر انگشتی جهت احراز هویت در دستگاه تان وارد نکرده اید ، لطفا ابتدا از طریق تنظیمات تلفن همراه خود نسبت به وارد کردن اثر انگشت خود اقدام نمایید");
+                    dialog.show();
+//                textView.setText("Please enable lockscreen security in your device's Settings");
+                } else {
+                    try {
+                        generateKey();
+                    } catch (FingerprintException e) {
+                        e.printStackTrace();
+                    }
+
+                    if (initCipher()) {
+                        cryptoObject = new FingerprintManager.CryptoObject(cipher);
+                        FingerprintHandler helper = new FingerprintHandler(this);
+                        helper.startAuth(fingerprintManager, cryptoObject);
+                    }
+                }
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    private void generateKey() throws FingerprintException {
+        try {
+            keyStore = KeyStore.getInstance("AndroidKeyStore");
+            keyGenerator = KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES, "AndroidKeyStore");
+            keyStore.load(null);
+            keyGenerator.init(new
+                    KeyGenParameterSpec.Builder(KEY_NAME,
+                    KeyProperties.PURPOSE_ENCRYPT |
+                            KeyProperties.PURPOSE_DECRYPT)
+                    .setBlockModes(KeyProperties.BLOCK_MODE_CBC)
+                    .setUserAuthenticationRequired(true)
+                    .setEncryptionPaddings(
+                            KeyProperties.ENCRYPTION_PADDING_PKCS7)
+                    .build());
+            keyGenerator.generateKey();
+
+        } catch (KeyStoreException
+                | NoSuchAlgorithmException
+                | NoSuchProviderException
+                | InvalidAlgorithmParameterException
+                | CertificateException
+                | IOException exc) {
+            exc.printStackTrace();
+            throw new FingerprintException(exc);
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    public boolean initCipher() {
+        try {
+            cipher = Cipher.getInstance(
+                    KeyProperties.KEY_ALGORITHM_AES + "/"
+                            + KeyProperties.BLOCK_MODE_CBC + "/"
+                            + KeyProperties.ENCRYPTION_PADDING_PKCS7);
+        } catch (NoSuchAlgorithmException |
+                NoSuchPaddingException e) {
+            throw new RuntimeException("Failed to get Cipher", e);
+        }
+
+        try {
+            keyStore.load(null);
+            SecretKey key = (SecretKey) keyStore.getKey(KEY_NAME,
+                    null);
+            cipher.init(Cipher.ENCRYPT_MODE, key);
+            return true;
+        } catch (KeyPermanentlyInvalidatedException e) {
+            return false;
+        } catch (KeyStoreException | CertificateException
+                | UnrecoverableKeyException | IOException
+                | NoSuchAlgorithmException | InvalidKeyException e) {
+            throw new RuntimeException("Failed to init Cipher", e);
+        }
+    }
+
+    private class FingerprintException extends Exception {
+        public FingerprintException(Exception e) {
+            super(e);
+        }
+    }
+
+
+}

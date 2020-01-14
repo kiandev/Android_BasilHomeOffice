@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".activity.PSh_Facilities"
+    android:orientation="vertical"
+    android:background="@color/colorGray200">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:text="امکانات"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/yekanmedium"/>
+
+    </RelativeLayout>
+
+    <ProgressBar
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/psh_facilities_pb"
+        android:padding="150dp"
+        android:theme="@style/CircularProgress_primary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/psh_facilities_havedata">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_marginTop="7dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/white"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/yekanregular"
+                    android:text="زمین فوتبال"
+                    android:id="@+id/psh_facilities_footballtext"
+                    android:gravity="center"
+                    android:textColor="@color/colorGray800"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/psh_facilities_football"
+                    android:src="@drawable/football_icon"
+                    android:padding="11dp"
+                    android:layout_alignParentRight="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/white"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/psh_facilities_childrentext"
+                    android:fontFamily="@font/yekanregular"
+                    android:text="زمین بازی کودکان"
+                    android:gravity="center"
+                    android:textColor="@color/colorGray800"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/psh_facilities_children"
+                    android:src="@drawable/children_icon"
+                    android:padding="12dp"
+                    android:layout_gravity="center"
+                    android:layout_alignParentRight="true" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/white"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/yekanregular"
+                    android:text="زمین بسکتبال"
+                    android:id="@+id/psh_facilities_basketballtext"
+                    android:gravity="center"
+                    android:textColor="@color/colorGray800"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/psh_facilities_basketball"
+                    android:src="@drawable/basketball_icon"
+                    android:padding="12dp"
+                    android:layout_alignParentRight="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/white"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/yekanregular"
+                    android:text="زمین تنیس"
+                    android:id="@+id/psh_facilities_tenistext"
+                    android:gravity="center"
+                    android:textColor="@color/colorGray800"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/psh_facilities_tenis"
+                    android:src="@drawable/tennis_icon"
+                    android:padding="11dp"
+                    android:layout_gravity="center"
+                    android:layout_alignParentRight="true" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/white"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/yekanregular"
+                    android:text="استخر سرپوشیده"
+                    android:id="@+id/psh_facilities_inpooltext"
+                    android:gravity="center"
+                    android:textColor="@color/colorGray800"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/psh_facilities_inpool"
+                    android:src="@drawable/in_pool_icon"
+                    android:padding="10dp"
+                    android:layout_alignParentRight="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/white"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/yekanregular"
+                    android:text="استخر روباز"
+                    android:id="@+id/psh_facilities_outpooltext"
+                    android:gravity="center"
+                    android:textColor="@color/colorGray800"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/psh_facilities_outpool"
+                    android:src="@drawable/out_pool_icon"
+                    android:padding="10dp"
+                    android:layout_gravity="center"
+                    android:layout_alignParentRight="true" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/white"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/yekanregular"
+                    android:text="سالن ورزشی"
+                    android:id="@+id/psh_facilities_gymtext"
+                    android:gravity="center"
+                    android:textColor="@color/colorGray800"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/psh_facilities_gym"
+                    android:src="@drawable/gym_icon"
+                    android:padding="11dp"
+                    android:layout_alignParentRight="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/white"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/yekanregular"
+                    android:text="سونا"
+                    android:id="@+id/psh_facilities_saunatext"
+                    android:gravity="center"
+                    android:textColor="@color/colorGray800"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/psh_facilities_sauna"
+                    android:src="@drawable/sauna_icon"
+                    android:padding="11dp"
+                    android:layout_gravity="center"
+                    android:layout_alignParentRight="true" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="7dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/white"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/yekanregular"
+                    android:text="ژنراتور"
+                    android:id="@+id/psh_facilities_generatortext"
+                    android:gravity="center"
+                    android:textColor="@color/colorGray800"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/psh_facilities_generator"
+                    android:src="@drawable/generator_icon"
+                    android:padding="12dp"
+                    android:layout_alignParentRight="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/white"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/yekanregular"
+                    android:text="نگهبانی"
+                    android:id="@+id/psh_facilities_guardtext"
+                    android:gravity="center"
+                    android:textColor="@color/colorGray800"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/psh_facilities_guard"
+                    android:src="@drawable/guard_icon"
+                    android:padding="11dp"
+                    android:layout_gravity="center"
+                    android:layout_alignParentRight="true" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

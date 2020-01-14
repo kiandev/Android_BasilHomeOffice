@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="پروفایل"
+        android:id="@+id/selling_item_profile"
+        android:icon="@drawable/profile_icon"/>
+
+    <item
+        android:title="مشتریان"
+        android:id="@+id/selling_item_customer"
+        android:icon="@drawable/customer_icon"/>
+
+    <item
+        android:title="پروژه ها"
+        android:id="@+id/selling_item_project"
+        android:icon="@drawable/project_icon"/>
+
+    <item
+        android:title="صفحه اصلی"
+        android:id="@+id/selling_item_home"
+        android:icon="@drawable/home_icon"/>
+
+</menu>
